@@ -1,0 +1,130 @@
+
+.solicitar-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #f7f3e9;
+  color: #25372d;
+}
+
+.solicitar-card {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px #123b2a12;
+}
+
+.solicitar-voltar {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #234f39;
+  text-decoration: none;
+}
+
+.solicitar-card h1 {
+  margin: 0 0 10px;
+  font-size: 30px;
+}
+
+.solicitar-subtitulo {
+  margin-bottom: 24px;
+  color: #647067;
+  line-height: 1.6;
+}
+
+.solicitar-resumo {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 28px;
+  padding: 16px;
+  background: #f7f3e9;
+  border-radius: 12px;
+}
+
+.solicitar-resumo img {
+  width: 110px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.solicitar-resumo h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.solicitar-resumo p {
+  margin: 5px 0;
+}
+
+.solicitar-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.solicitar-card label {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.solicitar-card input,
+.solicitar-card textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d4ddd5;
+  border-radius: 8px;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.solicitar-card input:focus,
+.solicitar-card textarea:focus {
+  outline: 2px solid #234f39;
+  outline-offset: 1px;
+}
+
+.solicitar-card button {
+  margin-top: 16px;
+  padding: 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #234f39;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.solicitar-card button:hover {
+  background: #123b2a;
+}
+
+.solicitar-mensagem {
+  padding: 12px;
+  background: #e2eadb;
+  border-radius: 8px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .solicitar-page {
+    padding: 20px 12px;
+  }
+
+  .solicitar-card {
+    padding: 20px;
+  }
+
+  .solicitar-resumo {
+    align-items: flex-start;
+  }
+
+  .solicitar-resumo img {
+    width: 90px;
+    height: 90px;
+  }
+}

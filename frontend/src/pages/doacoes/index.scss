@@ -1,0 +1,526 @@
+/* página de doações disponíveis */
+
+.doacoes-page {
+  display: flex;
+  min-height: 100vh;
+  background: #f8f6ef;
+  color: #263b32;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* menu lateral */
+
+.doacoes-sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 220px;
+  min-height: 100vh;
+  padding: 26px 16px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #104b35 0%, #123d2d 100%);
+  color: #fff;
+
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 38px;
+    padding: 0 8px;
+
+    img {
+      width: 9999px;
+      height: 44px;
+      object-fit: contain;
+    }
+
+    span {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 10px;
+      border-radius: 9px;
+      color: #e4eee7;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+
+      &:hover,
+      &.active {
+        background: #659765;
+        color: #fff;
+      }
+    }
+  }
+
+  .sidebar-sair {
+    margin-top: auto;
+    padding-top: 30px;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 10px;
+      color: #e4eee7;
+      font-size: 14px;
+      text-decoration: none;
+    }
+  }
+}
+
+/* conteúdo principal */
+
+.doacoes-conteudo {
+  flex: 1;
+  min-width: 0;
+  padding: 30px;
+  box-sizing: border-box;
+
+  .doacoes-titulo {
+    margin: 0 0 8px;
+    color: #214b37;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .doacoes-subtitulo {
+    margin: 0 0 24px;
+    color: #68766e;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
+/* pesquisa e filtros */
+
+.doacoes-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+
+  .doacoes-busca {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    padding: 0 14px;
+    border: 1px solid #deded4;
+    border-radius: 10px;
+    background: #fffdf8;
+
+    span {
+      color: #62746a;
+      font-size: 20px;
+    }
+
+    input {
+      width: 100%;
+      min-width: 0;
+      padding: 13px 0;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #263b32;
+      font-size: 14px;
+
+      &::placeholder {
+        color: #8a938c;
+      }
+    }
+
+    &:focus-within {
+      border-color: #659765;
+      box-shadow: 0 0 0 3px rgb(101 151 101 / 12%);
+    }
+  }
+
+  .doacoes-filtros {
+    padding: 13px 20px;
+    border: 1px solid #deded4;
+    border-radius: 10px;
+    background: #fffdf8;
+    color: #345342;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #eaf3e8;
+    }
+  }
+}
+
+/* lista de alimentos */
+
+.doacoes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.doacao-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #e6e3d9;
+  border-radius: 14px;
+  background: #fffdf8;
+  box-shadow: 0 2px 8px rgb(39 58 44 / 4%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 16px rgb(39 58 44 / 8%);
+  }
+
+  .doacao-imagem {
+    flex-shrink: 0;
+    width: 116px;
+    height: 108px;
+    overflow: hidden;
+    border-radius: 13px;
+    background: #eee9dd;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .doacao-informacoes {
+    flex: 1;
+    min-width: 0;
+
+    h3 {
+      margin: 0 0 5px;
+      color: #293b32;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .doacao-quantidade {
+      margin: 0 0 12px;
+      color: #68766e;
+      font-size: 13px;
+    }
+
+    .doacao-estabelecimento {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: #42594b;
+      font-size: 13px;
+    }
+
+    .doacao-detalhes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 22px;
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        color: #66756c;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .doacao-acoes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    align-self: stretch;
+    flex-shrink: 0;
+    gap: 18px;
+    min-width: 125px;
+  }
+}
+
+/* status dos alimentos */
+
+.doacao-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+
+  &.disponivel {
+    background: #d9efd4;
+    color: #356b3e;
+  }
+
+  &.reservado {
+    background: #e5e5e1;
+    color: #626a65;
+  }
+
+  &.indisponivel {
+    background: #f8ded8;
+    color: #a63f30;
+  }
+}
+
+/* botões */
+
+.doacao-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 125px;
+  padding: 11px 16px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 9px;
+  background: #c9402e;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    background: #ad3325;
+  }
+
+  &.detalhes {
+    border: 1px solid #9ab3a1;
+    background: transparent;
+    color: #345342;
+
+    &:hover {
+      background: #eaf3e8;
+    }
+  }
+
+  &:disabled {
+    background: #b9bdb9;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+/* mensagem sem resultados */
+
+.doacoes-vazio {
+  padding: 35px 20px;
+  border: 1px dashed #c9d3c9;
+  border-radius: 12px;
+  color: #68766e;
+  text-align: center;
+}
+
+/* tablet */
+
+@media (max-width: 900px) {
+  .doacoes-sidebar {
+    width: 185px;
+    padding: 22px 12px;
+
+    .sidebar-logo {
+      gap: 7px;
+
+      img {
+        width: 36px;
+        height: 36px;
+      }
+
+      span {
+        font-size: 13px;
+      }
+    }
+
+    nav a {
+      gap: 8px;
+      padding: 11px 8px;
+      font-size: 12px;
+    }
+  }
+
+  .doacoes-conteudo {
+    padding: 24px 18px;
+
+    .doacoes-titulo {
+      font-size: 26px;
+    }
+  }
+
+  .doacao-card {
+    gap: 14px;
+    padding: 13px;
+
+    .doacao-imagem {
+      width: 90px;
+      height: 90px;
+    }
+
+    .doacao-acoes {
+      min-width: 105px;
+    }
+  }
+
+  .doacao-botao {
+    min-width: 105px;
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+/* celular */
+
+@media (max-width: 600px) {
+  .doacoes-page {
+    flex-direction: column;
+  }
+
+  .doacoes-sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 14px;
+    border-radius: 0;
+
+    .sidebar-logo {
+      margin-bottom: 14px;
+    }
+
+    nav {
+      flex-direction: row;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+
+      a {
+        flex-shrink: 0;
+        padding: 10px;
+        font-size: 12px;
+      }
+    }
+
+    .sidebar-sair {
+      display: none;
+    }
+  }
+
+  .doacoes-conteudo {
+    padding: 22px 14px;
+
+    .doacoes-titulo {
+      font-size: 25px;
+    }
+
+    .doacoes-subtitulo {
+      font-size: 14px;
+    }
+  }
+
+  .doacoes-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+
+    .doacoes-filtros {
+      align-self: flex-start;
+    }
+  }
+
+  .doacao-card {
+    display: grid;
+    grid-template-columns: 82px minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+    padding: 12px;
+
+    .doacao-imagem {
+      width: 82px;
+      height: 82px;
+    }
+
+    .doacao-informacoes {
+      h3 {
+        font-size: 15px;
+      }
+
+      .doacao-quantidade {
+        margin-bottom: 8px;
+      }
+
+      .doacao-estabelecimento {
+        margin-bottom: 8px;
+        font-size: 12px;
+      }
+
+      .doacao-detalhes {
+        flex-direction: column;
+        gap: 7px;
+      }
+    }
+
+    .doacao-acoes {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-width: 0;
+    }
+  }
+
+  .doacao-status {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .doacao-botao {
+    min-width: 110px;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .doacao-card {
+    grid-template-columns: 68px minmax(0, 1fr);
+    gap: 9px;
+
+    .doacao-imagem {
+      width: 68px;
+      height: 68px;
+    }
+  }
+
+  .doacao-botao {
+    min-width: 95px;
+    font-size: 11px;
+  }
+}

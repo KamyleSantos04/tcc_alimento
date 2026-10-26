@@ -1,20 +1,20 @@
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./index.css";
 
-import Inicio from './pages/inicio/index'
-import CriarConta from './pages/criarconta/index';
-import ComoFunciona from './pages/comofunciona/index';
-import Doacoes from './pages/doacoes/index';
-import Instituicoes from './pages/instituicoes/index';
-import CadastroInstituicao from './pages/contaong/index';
-import Estabelecimento from './pages/contaestabele/index';
-import QueroDoar from './pages/querodoar';
+import Inicio from "./pages/inicio/index";
+import CriarConta from "./pages/criarconta/index";
+import ComoFunciona from "./pages/comofunciona/index";
+import Doacoes from "./pages/doacoes/index";
+import Instituicoes from "./pages/instituicoes/index";
+import CadastroInstituicao from "./pages/contaong/index";
+import Estabelecimento from "./pages/contaestabele/index";
+import QueroDoar from "./pages/querodoar";
+import SolicitarDoacao from "./pages/doacoes/solicitar-doacao";
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
@@ -25,9 +25,20 @@ root.render(
         <Route path="/ComoFunciona" element={<ComoFunciona />} />
         <Route path="/Doacoes" element={<Doacoes />} />
         <Route path="/Instituicoes" element={<Instituicoes />} />
-        <Route path="/CadastroInstituicao" element={<CadastroInstituicao />} />
-        <Route path="/Estabelecimento" element={<Estabelecimento />}/>
-        <Route path='/QueroDoar' element={<QueroDoar />} />
+        <Route
+          path="/CadastroInstituicao"
+          element={<CadastroInstituicao />}
+        />
+        <Route
+          path="/Estabelecimento"
+          element={<Estabelecimento />}
+        />
+        <Route path="/QueroDoar" element={<QueroDoar />} />
+
+        <Route
+          path="/doacoes/solicitar-doacao/:id"
+          element={<SolicitarDoacao />}
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
