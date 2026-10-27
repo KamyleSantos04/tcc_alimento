@@ -1,0 +1,855 @@
+
+.como-page {
+  --green: #234f39;
+  --green-dark: #123b2a;
+  --green-soft: #e2eadb;
+  --terra: #c94c38;
+  --cream: #f7f3e9;
+  --ink: #25372d;
+
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Inter", sans-serif;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.como-header {
+  width: 100%;
+  min-height: 92px;
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  background: var(--cream);
+}
+
+.como-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  img {
+    display: block;
+    width: 175px;
+    max-height: 65px;
+    object-fit: contain;
+  }
+}
+
+.como-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  a {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    transition: color 0.2s ease;
+
+    &:hover,
+    &.ativo {
+      color: var(--green);
+    }
+
+    &.ativo::after {
+      position: absolute;
+      right: 0;
+      bottom: -8px;
+      left: 0;
+      height: 2px;
+      background: var(--green);
+      content: "";
+    }
+  }
+}
+
+.como-header-acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.como-entrar,
+.como-cadastrar {
+  min-height: 43px;
+  padding: 12px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.como-entrar {
+  border: 1px solid var(--green);
+  background: transparent;
+  color: var(--green);
+
+  &:hover {
+    background: var(--green-soft);
+  }
+}
+
+.como-cadastrar {
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: #fff !important;
+
+  &:hover {
+    border-color: var(--green-dark);
+    background: var(--green-dark);
+  }
+}
+
+.como-entrar:hover,
+.como-cadastrar:hover {
+  transform: translateY(-2px);
+}
+
+.como-icone {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: var(--green-soft);
+  color: var(--green);
+
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* seção principal */
+
+.como-hero {
+  width: 100%;
+  padding: 75px 8% 95px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 65px;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(201, 76, 56, 0.09), transparent 22%),
+    linear-gradient(120deg, #f7f3e9 0%, #eef0e4 100%);
+}
+
+.como-hero-conteudo {
+  max-width: 590px;
+}
+
+.como-etiqueta {
+  width: fit-content;
+  margin-bottom: 25px;
+  padding: 9px 15px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #d8e1d1;
+  border-radius: 30px;
+  background: #fff;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 600;
+
+  .como-icone {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    svg {
+      width: 17px;
+      height: 17px;
+    }
+  }
+}
+
+.como-hero-conteudo h1 {
+  margin: 0 0 22px;
+  color: var(--green-dark);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(36px, 4.2vw, 60px);
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -1.8px;
+
+  span {
+    color: var(--terra);
+  }
+}
+
+.como-hero-conteudo > p {
+  max-width: 510px;
+  margin: 0;
+  color: #657066;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.como-botoes {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.como-botao-principal,
+.como-botao-secundario {
+  min-height: 52px;
+  padding: 15px 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.como-botao-principal {
+  background: var(--green);
+  color: #fff !important;
+
+  &:hover {
+    background: var(--green-dark);
+    transform: translateY(-3px);
+  }
+}
+
+.como-botao-secundario {
+  border: 1px solid #c9d3c5;
+  background: transparent;
+  color: var(--green);
+
+  &:hover {
+    background: #fff;
+    transform: translateY(-3px);
+  }
+}
+
+.como-impacto {
+  margin-top: 38px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  > .como-icone {
+    width: 43px;
+    height: 43px;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  strong {
+    color: var(--green-dark);
+    font-size: 13px;
+  }
+
+  span {
+    color: #788078;
+    font-size: 12px;
+  }
+}
+
+/* imagem principal */
+
+.como-hero-visual {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 410px;
+  padding-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.como-imagem-principal {
+  display: block;
+  width: 100%;
+  height: 410px;
+  object-fit: cover;
+  object-position: center;
+  border: 8px solid #fff;
+  border-radius: 160px 160px 28px 28px;
+  background: var(--green-soft);
+  box-shadow: 0 25px 55px rgba(35, 79, 57, 0.1);
+}
+
+.como-cartao-flutuante {
+  position: absolute;
+  right: -18px;
+  bottom: 0;
+  max-width: calc(100% - 20px);
+  padding: 17px 20px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid rgba(35, 79, 57, 0.05);
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(37, 55, 45, 0.12);
+
+  .como-icone {
+    width: 43px;
+    height: 43px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  strong {
+    color: var(--green-dark);
+    font-size: 12px;
+  }
+
+  span {
+    color: #7b847d;
+    font-size: 11px;
+  }
+}
+
+/* etapas */
+
+.como-etapas {
+  padding: 100px 8%;
+  background: #fff;
+}
+
+.como-titulo-secao {
+  max-width: 650px;
+  margin: 0 auto 55px;
+  text-align: center;
+
+  > span {
+    color: var(--terra);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin: 14px 0;
+    color: var(--green-dark);
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(30px, 3vw, 42px);
+    line-height: 1.2;
+  }
+
+  p {
+    margin: 0;
+    color: #758076;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+.como-etapas-lista {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.como-etapa-card {
+  position: relative;
+  min-width: 0;
+  padding: 35px 28px;
+  border: 1px solid #e9ede5;
+  border-radius: 22px;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(35, 79, 57, 0.08);
+  }
+
+  .como-icone {
+    margin-bottom: 22px;
+  }
+
+  h3 {
+    margin: 0 0 13px;
+    color: var(--green-dark);
+    font-family: "Poppins", sans-serif;
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  p {
+    margin: 0;
+    color: #758076;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+}
+
+.como-numero {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: #dce5d7;
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* doadores e instituições */
+
+.como-publico {
+  padding: 100px 8%;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 65px;
+  background: var(--cream);
+}
+
+.como-publico-texto {
+  > span {
+    color: var(--terra);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin: 17px 0;
+    color: var(--green-dark);
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(30px, 3.2vw, 43px);
+    line-height: 1.25;
+  }
+
+  p {
+    margin: 0;
+    color: #707a70;
+    font-size: 15px;
+    line-height: 1.9;
+  }
+}
+
+.como-publico-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+
+  article {
+    min-width: 0;
+    padding: 28px 23px;
+    border: 1px solid #e5e9de;
+    border-radius: 22px;
+    background: #fff;
+
+    h3 {
+      margin: 20px 0 12px;
+      color: var(--green-dark);
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 0 0 22px;
+      color: #758076;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    > a {
+      display: inline-block;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+
+      &:hover {
+        color: var(--terra);
+      }
+    }
+  }
+}
+
+/* chamada final */
+
+.como-final {
+  padding: 75px 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--green-dark);
+  color: #fff;
+
+  h2 {
+    max-width: 700px;
+    margin: 0 0 17px;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1.25;
+  }
+
+  p {
+    max-width: 620px;
+    margin: 0 0 28px;
+    color: #d5e0d5;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .como-botao-principal {
+    background: #fff;
+    color: var(--green-dark) !important;
+
+    &:hover {
+      background: var(--green-soft);
+    }
+  }
+}
+
+/* rodapé */
+
+.como-footer {
+  min-height: 110px;
+  padding: 28px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #0d3021;
+  color: #fff;
+
+  img {
+    display: block;
+    width: 145px;
+    max-height: 55px;
+    object-fit: contain;
+  }
+
+  p {
+    margin: 0;
+    color: #d0ddd1;
+    font-size: 12px;
+  }
+
+  > span {
+    color: #c3d0c5;
+    font-size: 11px;
+  }
+}
+
+/* tablets */
+
+@media (max-width: 1100px) {
+  .como-header {
+    padding-right: 4%;
+    padding-left: 4%;
+    gap: 18px;
+  }
+
+  .como-logo img {
+    width: 140px;
+  }
+
+  .como-nav {
+    gap: 18px;
+  }
+
+  .como-entrar,
+  .como-cadastrar {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .como-hero,
+  .como-publico {
+    padding-right: 6%;
+    padding-left: 6%;
+    gap: 40px;
+  }
+
+  .como-imagem-principal {
+    height: 360px;
+  }
+
+  .como-etapas {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+}
+
+/* celulares e tablets menores */
+
+@media (max-width: 800px) {
+  .como-header {
+    padding: 18px 5%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .como-logo img {
+    width: 150px;
+  }
+
+  .como-nav {
+    order: 3;
+    width: 100%;
+    padding: 8px 0 3px;
+    justify-content: flex-start;
+    gap: 24px;
+    overflow-x: auto;
+
+    a {
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+  }
+
+  .como-header-acoes {
+    gap: 8px;
+  }
+
+  .como-entrar,
+  .como-cadastrar {
+    min-height: 39px;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .como-hero {
+    padding: 55px 6% 75px;
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .como-hero-conteudo {
+    max-width: 650px;
+  }
+
+  .como-hero-conteudo h1 {
+    font-size: clamp(36px, 8vw, 52px);
+  }
+
+  .como-hero-visual {
+    width: min(100%, 550px);
+    min-height: 390px;
+    margin: 0 auto;
+  }
+
+  .como-imagem-principal {
+    height: 390px;
+  }
+
+  .como-cartao-flutuante {
+    right: -5px;
+  }
+
+  .como-etapas,
+  .como-publico {
+    padding: 70px 6%;
+  }
+
+  .como-etapas-lista {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .como-etapa-card {
+    padding: 30px;
+  }
+
+  .como-publico {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .como-publico-texto {
+    max-width: 600px;
+  }
+
+  .como-final {
+    padding: 65px 6%;
+  }
+
+  .como-footer {
+    padding: 30px 6%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* celulares */
+
+@media (max-width: 480px) {
+  .como-header {
+    gap: 15px;
+  }
+
+  .como-logo img {
+    width: 120px;
+  }
+
+  .como-header-acoes {
+    gap: 6px;
+  }
+
+  .como-entrar,
+  .como-cadastrar {
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .como-nav {
+    gap: 20px;
+  }
+
+  .como-hero {
+    padding: 42px 20px 65px;
+    gap: 35px;
+  }
+
+  .como-etiqueta {
+    margin-bottom: 20px;
+    font-size: 11px;
+  }
+
+  .como-hero-conteudo h1 {
+    font-size: 35px;
+    letter-spacing: -1px;
+  }
+
+  .como-hero-conteudo > p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .como-botoes {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .como-botao-principal,
+  .como-botao-secundario {
+    width: 100%;
+    min-height: 48px;
+    padding: 14px 18px;
+  }
+
+  .como-impacto {
+    margin-top: 28px;
+  }
+
+  .como-impacto span {
+    font-size: 11px;
+  }
+
+  .como-hero-visual {
+    min-height: 300px;
+  }
+
+  .como-imagem-principal {
+    height: 300px;
+    border-width: 6px;
+    border-radius: 120px 120px 24px 24px;
+  }
+
+  .como-cartao-flutuante {
+    right: 0;
+    padding: 12px;
+    gap: 9px;
+
+    .como-icone {
+      width: 36px;
+      height: 36px;
+    }
+
+    strong {
+      font-size: 11px;
+    }
+
+    span {
+      font-size: 10px;
+    }
+  }
+
+  .como-etapas,
+  .como-publico {
+    padding: 60px 20px;
+  }
+
+  .como-titulo-secao {
+    margin-bottom: 35px;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .como-etapa-card {
+    padding: 27px 23px;
+  }
+
+  .como-publico-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .como-publico-texto h2 {
+    font-size: 32px;
+  }
+
+  .como-final {
+    padding: 55px 22px;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .como-footer {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
